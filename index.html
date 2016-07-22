@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 禁止自动对符合电话格式的文本的格式化显示 -->
+	<meta name="format-detection" content="telephone=no">
+	<!-- 禁止自动对符合地址格式的文本的格式化显示 -->
+	<meta name="format-detection" content="address=no">
+	<!-- 视窗宽度指定为设备支持宽度，禁止缩放 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- <link rel="stylesheet" href="css/normalize.css"> -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="header">
+		<h1>hello world!</h1>
+		<p>...</p>
+</header>
+<section> 
+	<div class="container pdL10 pdR10">
+		<div class="tab-content">
+			<div class="item">
+				<h1 class="title">dns预解析</h1>
+					<p>&lt; meta http-equiv="x-dns-prefetch-control" content="on" /&gt;</p>
+					<p>&lt; link rel="dns-prefetch" href="...." /&gt;</p>
+				<h1 class="title">测试列表</h1>
+				<ul>
+					<li class="list">
+						<div class="list-body clearfix">
+							<a href="##" class="fl mrgR10" class="list-img">
+								<img src="images/9.jpg" alt="...">
+							</a>
+							<p class="list-text">
+								<a href="##">
+								这个系列，学习到了很多东西啊这个系列，学习到了很多东西啊这个系列，学习到了很多东西啊这个系列，学习到了很多东西啊...
+								</a>
+							</p>
+						</div>
+						<div class="list-footer">
+							<div class="fl">
+								<span class="list-state">
+									<i class="fa fa-eye"></i>
+									100
+								</span>
+								<time class="list-state">
+									2小时前
+								</time>
+							</div>
+							<button type="button">
+								<i class="fa fa-thumbs-o-up"></i>
+							</button>
+							<button type="button">
+								<i class="fa fa-commenting-o"></i>
+							</button>
+						</div>
+					</li>
+					<li class="list">
+						<div class="list-body clearfix">
+							<a href="##" class="fl mrgR10" class="list-img">
+								<img src="images/9.jpg" alt="...">
+							</a>
+							<p class="list-text">
+								<a href="##">
+								这个系列，学习到了很多东西啊这个系列，学习到了很多东西啊这个系列，学习到了很多东西啊这个系列，学习到了很多东西啊...
+								</a>
+							</p>
+						</div>
+						<div class="list-footer">
+							<div class="fl">
+								<span class="list-state">
+									<i class="fa fa-eye"></i>
+									100
+								</span>
+								<time class="list-state">
+									2小时前
+								</time>
+							</div>
+							<button type="button">
+								<i class="fa fa-thumbs-o-up"></i>
+							</button>
+							<button type="button">
+								<i class="fa fa-commenting-o"></i>
+							</button>
+						</div>
+					</li>
+					<li class="list">
+						<div class="list-body clearfix">
+							<a href="##" class="fl mrgR10" class="list-img">
+								<img src="images/9.jpg" alt="...">
+							</a>
+							<p class="list-text">
+								<a href="##">
+								这个系列，学习到了很多东西啊这个系列，学习到了很多东西啊这个系列，学习到了很多东西啊这个系列，学习到了很多东西啊...
+								</a>
+							</p>
+						</div>
+						<div class="list-footer">
+							<div class="fl">
+								<span class="list-state">
+									<i class="fa fa-eye"></i>
+									100
+								</span>
+								<time class="list-state">
+									2小时前
+								</time>
+							</div>
+							<button type="button">
+								<i class="fa fa-thumbs-o-up"></i>
+							</button>
+							<button type="button">
+								<i class="fa fa-commenting-o"></i>
+							</button>
+						</div>
+					</li>
+					<li class="list">
+						<div class="list-body clearfix">
+							<a href="##" class="fl mrgR10" class="list-img">
+								<img src="images/9.jpg" alt="...">
+							</a>
+							<p class="list-text">
+								<a href="##">
+								这个系列，学习到了很多东西啊这个系列，学习到了很多东西啊这个系列，学习到了很多东西啊这个系列，学习到了很多东西啊...
+								</a>
+							</p>
+						</div>
+						<div class="list-footer">
+							<div class="fl">
+								<span class="list-state">
+									<i class="fa fa-eye"></i>
+									100
+								</span>
+								<time class="list-state">
+									2小时前
+								</time>
+							</div>
+							<button type="button">
+								<i class="fa fa-thumbs-o-up"></i>
+							</button>
+							<button type="button">
+								<i class="fa fa-commenting-o"></i>
+							</button>
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+</section>
+
+<!-- js -->
+<script src="js/zepto.min.js"></script>
+<script>
+	(function($){
+		var UA=window.navigator.userAgent;
+		var CLICK="click";
+		if(/ipad|iphone|android/.test(UA)){
+			CLICK="tap";
+		}
+
+		var btns=$("[type='button']","body");
+		btns.each(function(){
+			var $this=$(this);
+			$this[CLICK](function(){
+				$.ajax({
+					type:"GET",
+					url:"data/test.json",
+					dataType:"json",
+					success:function(data){
+						console.log(data.result);
+						if(data.result=="true"){
+							var data=data.data;
+							console.log(data[0].name);
+						}else{
+							console.log("111");
+						}
+						
+					},
+					error:function(xhr,type){
+						console.log("ajax error!");
+					}
+				});
+			});
+		});
+
+		function CLICK(){
+			var UA=window.navigator.userAgent;
+			var CLICK="click";
+			if(/ipad|iphone|android/.test(UA)){
+				CLICK="tap";
+			}
+			return CLICK;
+		}
+	})(Zepto)
+</script>
+</body>
+</html>
