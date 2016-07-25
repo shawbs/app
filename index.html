@@ -153,6 +153,7 @@
 </section>
 
 <!-- js -->
+<!-- <script src="js/jquery-1.11.3.min.js"></script> -->
 <script src="js/zepto.min.js"></script>
 <script>
 	(function($){
@@ -162,38 +163,28 @@
 			CLICK="tap";
 		}
 
+
+
 		var btns=$("[type='button']","body");
 		btns.each(function(){
 			var $this=$(this);
 			$this[CLICK](function(){
-				$.ajax({
-					type:"GET",
-					url:"data/test.json",
-					dataType:"json",
-					success:function(data){
-						console.log(data.result);
-						if(data.result=="true"){
-							var data=data.data;
-							console.log(data[0].name);
-						}else{
-							console.log("111");
-						}
-						
-					},
-					error:function(xhr,type){
-						console.log("ajax error!");
-					}
+				getData("GET","data/test.php",null,function(data){
+					alert(data[0].name);
 				});
 			});
 		});
 
-		function CLICK(){
-			var UA=window.navigator.userAgent;
-			var CLICK="click";
-			if(/ipad|iphone|android/.test(UA)){
-				CLICK="tap";
-			}
-			return CLICK;
+		function getData(WAY,URL,POSTDATA,callBack){
+			$.ajax({
+					type:WAY,
+					url:URL,
+					data:POSTDATA,
+					dataType:"json",
+					success:function(data){
+						callBack(data);
+					}
+			});
 		}
 	})(Zepto)
 </script>
