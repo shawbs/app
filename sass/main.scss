@@ -23,8 +23,26 @@ p{
 .container{
 	font-size: $baseFontSize;
 }
+.section{
+	position: absolute;
+	top: 77px;
+	left: 0;
+	right: 0;
+	bottom: 40px;
+	z-index: 1;
 
+	overflow:auto;/* winphone8和android4+ */
+	-webkit-overflow-scrolling: touch; /* ios5+ */
+}
+// header
 .header{
+	position: absolute;
+	left: 0;
+	right:0;
+	top: 0;
+	bottom: auto;
+	z-index: 2;
+
 	padding: 20px;
 	background-color: $normal;
 	color: $white;
@@ -32,6 +50,41 @@ p{
 		font-size: 1rem;
 	}
 }
+// footer
+.footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	
+	height: 40px;
+	@include rgba(0,0,0,0.9,'000000','#99');
+	overflow: hidden;
+	@at-root{
+		.footer-navbar{
+
+			li{
+				float: left;
+				width: (100%/3);
+				height: 40px;
+				line-height: 40px;
+				font-size: 1.6em;
+				text-align: center;
+				&>a{
+					display: block;
+					color: $white;
+					.fa{
+						line-height: 40px;
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+// session
 .title{
 	font-size: 1.6em;
 	line-height: 2em;
