@@ -2,24 +2,24 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="x5-fullscreen" content="true">
 	<title>Document</title>
-	<!-- 禁止自动对符合电话格式的文本的格式化显示 -->
-	<meta name="format-detection" content="telephone=no">
-	<!-- 禁止自动对符合地址格式的文本的格式化显示 -->
-	<meta name="format-detection" content="address=no">
-	<!-- 视窗宽度指定为设备支持宽度，禁止缩放 -->
-	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<!-- <link rel="stylesheet" href="css/normalize.css"> -->
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+
+<!-- header -->
 <header class="header">
-		<h1>hello world!</h1>
-		<p>...</p>
+	<h1>hello world!</h1>
+	<p>...</p>
 </header>
-<section> 
+<!-- header end -->
+<section class="section"> 
 	<div class="container pdL10 pdR10">
 		<div class="tab-content">
 			<div class="item">
@@ -52,7 +52,7 @@
 							<button type="button">
 								<i class="fa fa-thumbs-o-up"></i>
 							</button>
-							<button type="button">
+							<button type="button" data-name="xiaoxinwu1">
 								<i class="fa fa-commenting-o"></i>
 							</button>
 						</div>
@@ -81,7 +81,7 @@
 							<button type="button">
 								<i class="fa fa-thumbs-o-up"></i>
 							</button>
-							<button type="button">
+							<button type="button" data-name="xiaoxinwu2">
 								<i class="fa fa-commenting-o"></i>
 							</button>
 						</div>
@@ -110,7 +110,7 @@
 							<button type="button">
 								<i class="fa fa-thumbs-o-up"></i>
 							</button>
-							<button type="button">
+							<button type="button" data-name="xiaoxinwu3">
 								<i class="fa fa-commenting-o"></i>
 							</button>
 						</div>
@@ -139,7 +139,7 @@
 							<button type="button">
 								<i class="fa fa-thumbs-o-up"></i>
 							</button>
-							<button type="button">
+							<button type="button" data-name="xiaoxinwu4">
 								<i class="fa fa-commenting-o"></i>
 							</button>
 						</div>
@@ -151,7 +151,6 @@
 		
 	</div>
 </section>
-
 <!-- js -->
 <!-- <script src="js/jquery-1.11.3.min.js"></script> -->
 <script src="js/zepto.min.js"></script>
@@ -163,14 +162,12 @@
 			CLICK="tap";
 		}
 
-
-
 		var btns=$("[type='button']","body");
 		btns.each(function(){
 			var $this=$(this);
 			$this[CLICK](function(){
-				getData("GET","data/test.php",null,function(data){
-					alert(data[0].name);
+				getData("GET","php/test.php",{name:$this.data('name')},function(data){
+					alert(data);
 				});
 			});
 		});
@@ -188,5 +185,30 @@
 		}
 	})(Zepto)
 </script>
+<!-- js end -->
+
+<!-- footer -->
+<footer class="footer">
+	<div class="container">
+		<ul class="footer-navbar clearfix">
+			<li>
+				<a href="##">
+					<i class="fa fa-user"></i>
+				</a>
+			</li>
+			<li>
+				<a href="##">
+					<i class="fa fa-users"></i>
+				</a>
+			</li>
+			<li>
+				<a href="##">
+					<i class="fa fa-star-o"></i>
+				</a>
+			</li>
+		</ul>
+	</div>
+</footer>
+<!-- footer end -->
 </body>
 </html>
