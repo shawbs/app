@@ -33,7 +33,7 @@ p {
   bottom: 40px;
   z-index: 1;
   overflow: auto;
-  /* winphone8鍜宎ndroid4+ */
+  /* winphone8和android4+ */
   -webkit-overflow-scrolling: touch;
   /* ios5+ */
 }
@@ -114,6 +114,41 @@ p {
   border: none;
   background-color: transparent;
   margin: 0 5px;
+}
+
+.countdemo .title {
+  border-bottom: none;
+  color: #ffffff;
+  background-color: #337ab7;
+  box-shadow: 0 0 5px #333;
+  -webkit-box-shadow: 0 0 5px #333;
+  -moz-box-shadow: 0 0 5px #333;
+  margin: 0 -10px;
+  padding: 0 10px;
+}
+
+.area-demo {
+  font-size: 1.4em;
+  line-height: 3em;
+}
+body {
+  counter-reset: test;
+}
+.area-demo h1 {
+  counter-reset: subtest;
+}
+.area-demo h1:before {
+  content: "列表" counter(test) "-";
+  counter-increment: test;
+}
+.area-demo h2:before {
+  content: counter(test) "-" counter(subtest);
+  counter-increment: subtest;
+  margin-right: 5px;
+}
+.area-demo h3:before {
+  content: counter(subtest) ":";
+  counter-increment: subtest;
 }
 
 /*# sourceMappingURL=main.css.map */

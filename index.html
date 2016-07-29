@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="x5-fullscreen" content="true">
+	<!-- 不让将页面数字探索成电话 -->
+	<meta name="format-detection" content="telephone=no">
 	<title>Document</title>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/reset.css">
@@ -16,7 +18,9 @@
 <!-- header -->
 <header class="header">
 	<h1>hello world!</h1>
-	<p>...</p>
+	<p>...
+		<a href="http://m.amap.com/navi/?dest=118.128073,24.481101&destName=sss&hideRouteIcon=1&key=f19a1db09e93238d69bfcfedc28cc90f">高等地图</a>
+	</p>
 </header>
 <!-- header end -->
 <section class="section"> 
@@ -148,7 +152,34 @@
 				</ul>
 			</div>
 		</div>
-		
+		<div class="countdemo">
+			<h1 class="title">
+				count demo
+			</h1>
+			<div class="area-demo">
+				<h1>title</h1>
+				<h2>list</h2>
+				<h2>list</h2>
+				<h2>list</h2>
+
+				<h1>title</h1>
+				<h2>list</h2>
+				<h2>list</h2>
+				<h2>list</h2>
+
+				<h1>title</h1>
+				<h2>list</h2>
+				<h2>list</h2>
+				<h2>list</h2>
+
+				<h1>title</h1>
+				<h3>other</h3>
+				<h3>other</h3>
+				<h3>other</h3>
+				<h3>other</h3>
+				<h3>other</h3>
+			</div>
+		</div>
 	</div>
 </section>
 <!-- js -->
@@ -210,5 +241,23 @@
 	</div>
 </footer>
 <!-- footer end -->
+<script type="text/javascript">
+window.onload=function(){
+	console.log("网页可见区域宽："+document.body.clientWidth);
+	console.log("网页可见区域高："+document.body.clientHeight);
+	console.log("网页可见区域宽(包括边线的宽)："+document.body.offsetWidth);
+	console.log("网页可见区域宽(包括边线的高)："+document.body.offsetHeight);
+	console.log("网页正文全文宽："+document.body.scrollWidth);
+	console.log("网页正文全文高："+document.body.scrollHeight);
+	console.log("网页被卷去的高："+document.body.scrollTop);
+	console.log("网页被卷去的左："+document.body.scrollTop);
+	console.log("网页正文部分上："+window.screenTop);
+	console.log("网页正文部分左："+window.screenLeft);
+	console.log("屏幕分辨率的高："+window.screen.height);
+	console.log("屏幕分辨率的宽："+window.screen.width);
+	console.log("屏幕可用工作区高度："+window.screen.availHeight);
+	console.log("屏幕可用工作区宽度："+window.screen.availWidth);
+}
+</script>
 </body>
 </html>

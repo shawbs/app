@@ -17,7 +17,7 @@
 }
 
 //linearGradient
-@mixin linearGradient($startColor,$endColor,$direct){
+@mixin linearGradient($direct,$startColor,$endColor){
   background: linear-gradient(to $direct,$startColor,$endColor);
   @if $direct==bottom or $direct==top{
     $direct:0;
