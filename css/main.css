@@ -3,6 +3,7 @@ body {
   background-color: #f2f2f2;
   font-family: "Helvetica Neue", Arial, "Microsoft YaHei", sans-serif;
   color: #252525;
+  overflow: hidden;
 }
 
 a {
