@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>demo1</title>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/diolog.css">
+	<style type="text/css">
+		html,body{
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+		body{
+			font-size: 62.5%;
+			font-family:"微软雅黑";
+			background-color: #f2f2f2;
+		}
+		h1{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 100%;
+			margin: 0 auto;
+		}
+		.ieCss3{
+			position: relative;
+			z-index: 2;
+			behavior: url(ie-css3.htc); /* 通知IE浏览器调用脚本作用于'box'类 */
+		}
+		.btn{
+			border: none;
+			border-radius: 5px;
+			padding: 5px 15px;
+			background-color: transparent;
+			cursor: pointer;
+		}
+		.btn-submit{
+			background-color: #4C9ED9;
+			color: white;
+		}
+		.fl{
+			float: left;
+		}
+		.fr{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div id="diolog" class="ieCss3">
+				<h1 class="diolog-hd ieCss3">和。。。的对话</h1>
+				<div class="diolog-bd">
+					<div class="diolog left">
+						<a href="##" class="user">
+							<img src="images/album-3.jpg" alt="1" width="50" height="50">
+						</a>
+						<div class="text ieCss3">hello lucy</div>
+					</div>
+					<div class="diolog right">
+						<a href="##" class="user">
+							<img src="images/album-1.jpg" alt="2" width="50" height="50">
+						</a>
+						<div class="text ieCss3">hello ealsdhalslasnlxanlenlcnaldc</div>
+					</div>
+					<div class="diolog left">
+						<a href="##" class="user">
+							<img src="images/album-3.jpg" alt="1" width="50" height="50">
+						</a>
+						<div class="text ieCss3">hello lucyhello lucyhello lucyhello lucyhello lucyhello lucy</div>
+					</div>
+					<div class="inset-tips">
+						<time>20分钟前</time>
+					</div>
+					<div class="diolog right">
+						<a href="##" class="user">
+							<img src="images/album-1.jpg" alt="2" width="50" height="50">
+						</a>
+						<div class="text ieCss3">hello ealsdhalslasnlxanlenlcnaldcealsdhalslasnlxanlenlcnaldcealsdhalslasnlxanlenlcnaldcealsdhalslasnlxanlenlcnaldcealsdhalslasnlxanlenlcnaldcealsdhalslasnlxanlenlcnaldc</div>
+					</div>
+				</div>
+				<div class="diolog-fd">
+					<form action="">
+						<textarea name="input" id="" cols="30" rows="10"></textarea>
+						<div class="form-bottom">
+							<div class="btn-group fl">
+								<a href="" class="fa fa-font"></a>
+								<a href="" class="fa fa-cut"></a>
+								<a href="" class="fa fa-link"></a>
+								<a href="" class="fa fa-file"></a>
+							</div>
+							<div class="form-ctrl fr">
+								<button class="btn-submit btn ieCss3">发送</button>
+							</div>
+						</div>
+					</form>
+				</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		(function(){
+			var test1=document.querySelector(".test1");
+			console.log(test1);
+			var topPos=(typeof window.screenTop=="number")?window.screenTop:window.screenY;
+			var leftPos=(typeof window.screenLeft=="number")?window.screenLeft:window.screenX;
+			console.log("screenTop:"+leftPos);
+			console.log("screenLeft:"+topPos);
+			window.status="abc"
+		})()
+	</script>
+</body>
+</html>
