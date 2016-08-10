@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>demo1</title>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/diolog.css">
+	<style type="text/css">
+		html{
+			font-size: calc(100vw/31.25);/*12px  1vw=375*/
+		}
+		body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed,
+		figure, figcaption, footer, header, hgroup,
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video{
+			margin: 0;
+			padding: 0;
+ 			vertical-align: baseline;
+		}
+		html,body{
+			font-family:"Helvetica Neue",Arial,"Microsoft YaHei",sans-serif;
+			height: 100vh;
+			width: 100vw;
+			overflow: hidden;
+		}
+		.ieCss3{
+			position: relative;
+			z-index: 2;
+			behavior: url(ie-css3.htc); /* 通知IE浏览器调用脚本作用于'box'类 */
+		}
+		.btn{
+			font-size: 1rem;
+			border: none;
+			border-radius: 2vw;
+			padding: .8vh 5vw;
+			background-color: transparent;
+			cursor: pointer;
+		}
+		.btn-submit{
+			background-color: #4C9ED9;
+			color: white;
+		}
+		.fl{
+			float: left;
+		}
+		.fr{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+				<header class="diolog-hd">和lucy的对话</header>
+				<section class="wrap" id="wraper">
+					<div class="diolog-bd" id="diologBox">
+						<div class="diolog left">
+							<a href="##" class="user">
+								<img src="images/album-3.jpg" alt="1" width="50" height="50">
+							</a>
+							<div class="text">hello meile</div>
+						</div>
+						<div class="diolog right">
+							<a href="##" class="user">
+								<img src="images/album-1.jpg" alt="2" width="50" height="50">
+							</a>
+							<div class="text">hello lucy</div>
+						</div>
+						<div class="diolog left">
+							<a href="##" class="user">
+								<img src="images/album-3.jpg" alt="1" width="50" height="50">
+							</a>
+							<div class="text">hello meile</div>
+						</div>
+						<div class="diolog right">
+							<a href="##" class="user">
+								<img src="images/album-1.jpg" alt="2" width="50" height="50">
+							</a>
+							<div class="text">hello ealsdhalslasnlxanlenlcnaldc</div>
+						</div>
+						<div class="diolog left">
+							<a href="##" class="user">
+								<img src="images/album-3.jpg" alt="1" width="50" height="50">
+							</a>
+							<div class="text">hello meile</div>
+						</div>
+						<div class="diolog right">
+							<a href="##" class="user">
+								<img src="images/album-1.jpg" alt="2" width="50" height="50">
+							</a>
+							<div class="text">hello ealsdhalslasnlxanlenlcnaldc</div>
+						</div>
+						<div class="diolog left">
+							<a href="##" class="user">
+								<img src="images/album-3.jpg" alt="1" width="50" height="50">
+							</a>
+							<div class="text">hello lucyhello lucyhello lucyhello lucyhello lucyhello lucy</div>
+						</div>
+						<div class="inset-tips">
+							<time>20分钟前</time>
+						</div>
+						<div class="diolog right">
+							<a href="##" class="user">
+								<img src="images/album-1.jpg" alt="2" width="50" height="50">
+							</a>
+							<div class="text ieCss3">hello ealsdhalslasnlxanlenlcnaldcealsdhalslasnlxanlenlcnaldcealsdhalslasnlxanlenlcnaldcealsdhalslasnlxanlenlcnaldcealsdhalslasnlxanlenlcnaldcealsdhalslasnlxanlenlcnaldc</div>
+						</div>
+					</div>
+				</section>
+				<footer class="diolog-fd">
+					<form action="php/app.php" method="POST">
+						<textarea name="text" id="text" cols="30" rows="10" required="required"></textarea>
+						<div class="form-bottom">
+							<div class="btn-group fl">
+								<a href="" class="fa fa-microphone"></a>
+								<a href="" class="fa fa-smile-o"></a>
+								<a href="" class="fa fa-camera"></a>
+								<a href="" class="fa fa-star"></a>
+								<a href="" class="fa fa-folder-o"></a>
+							</div>
+							<div class="form-ctrl fr">
+								<button id="submit" class="btn-submit btn ieCss3">发送</button>
+							</div>
+						</div>
+					</form>
+				</footer>
+
+<script src="js/zepto.min.js"></script>
+<script>
+	(function($){
+		// var UA=window.navigator.userAgent;
+		// var CLICK="click";
+		// if(/ipad|iphone|android/.test(UA)){
+		// 	CLICK="tap";
+		// }
+		$("#submit").on('click',function(){
+			event.preventDefault();
+			submint();
+		});
+		$("#text").on('keydown',function(e){
+			if(e.ctrlKey && e.which=="13"){
+				submint();
+			}
+		})
+		function submint(){
+			var input=$('#text');
+			var str=input.val();
+			str=$.trim(str);
+			if(!!str){
+				getData("POST","php/app.php",{name:'mine',text:str},function(data){
+					var text=data;
+
+					var diologBox=$('#diologBox');
+					var $right=$('.right')[0];
+					var link=$('.user',$right).attr('href');
+					var img=$('.user>img',$right).attr('src');
+					var diolog="<div class='diolog right'>";
+					diolog=diolog+"<a class='user' href="+link+">";
+					diolog=diolog+"<img src="+img+">";
+					diolog=diolog+"</a>";
+					diolog=diolog+"<div class='text'>"+text+"</div>";
+					diolog+="</div>";
+					diologBox.append(diolog);
+
+					$("#wraper").scrollTop(diologBox.height());
+					input.val("");
+				});
+			}else{
+					alert("发送信息不能为空！");
+			}
+			
+		}
+		function checkAll(elemt){
+			if(elemt!=""){
+				return true;
+			}
+			return false;
+		}
+		function getData(METHOD,URL,POSTDATA,callBack){
+			$.ajax({
+					type:METHOD,
+					url:URL,
+					data:POSTDATA,
+					dataType:"json",
+					success:function(data){
+						callBack(data);
+					}
+			});
+		}
+	})(Zepto)
+</script>
+</body>
+</html>

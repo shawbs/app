@@ -1,17 +1,8 @@
 <?php
 
-// $data = $$['name'];
+$text=$_POST['text'];
 
-$result = array(
-		array(
-				'name' => 'xiaoxinwu1',
-				'age' => 250
-			),
-		array(
-				'name' => 'xiaoxinwu2',
-				'age' => 250
-			)
-	);
 
-echo json_encode($result);
+
+echo json_encode($text);
 exit;
